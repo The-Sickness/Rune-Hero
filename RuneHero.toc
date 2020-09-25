@@ -2,8 +2,9 @@
 ## Title: RuneHero
 ## Notes: The ultimate runic experience.
 ## Author: Lowbrow, Triadian, Xeelee
+## Maintainer: The Sickness
 ## SavedVariables: RuneHero_Saved
-## Version: 1.3.5
+## Version: 2.0
 
 RuneHero.xml
 RuneHero.lua
