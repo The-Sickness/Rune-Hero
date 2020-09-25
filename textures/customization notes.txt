@@ -1,0 +1,17 @@
+If you are going to tweak the runeblade graphic, the three files you'll have to replace are:
+'runeblade'           (The standard background)
+'runeblade-statusbar' (The bright runeblade that fills as power is gained)
+'runeblade-proc'      (The background to display when Sudden Doom / Freezing Fog procs)
+
+The name of the replaced files must be the same after replacing.
+
+If the size of your background does not match up with rune button cooldowns, you can use the following two commands
+to adjust the position and scrolling width of the rune buttons. The current settings make the buttons line up
+just below the swordguard when ready and start at the tip of the blade when cooling down.
+
+/runehero offset X (default 65)
+/runehero width X  (default 260)
+
+Know issue:
+I don't have options yet to configure the status bar fill rate, so it will display oddly with modified textures 
+Or you could just replace with a blank texture to disable.
