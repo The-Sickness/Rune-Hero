@@ -16,12 +16,17 @@ function RH.RuneHero_LoadOptions (self)
 	titleString:SetPoint("TOPLEFT", 10, -15);
 	
 	-- Button to lock/unlock runehero
-	local lockButton = CreateFrame( "CheckButton", "lockButton", rhOptions, "OptionsCheckButtonTemplate");
-	lockButton.text = _G["lockButton".."Text"];
-	lockButton.text:SetText("Lock RuneHero");
-	lockButton:SetPoint("BOTTOMLEFT", titleString, 0, -40);
-	lockButton:SetScript("OnClick", RuneHero_Lock );
-	lockButton:SetChecked(true);
+	local lockButton = CreateFrame("CheckButton", "lockButton", rhOptions, "UICheckButtonTemplate");
+    lockButton:SetPoint("BOTTOMLEFT", titleString, 0, -40);
+    lockButton:SetScript("OnClick", RuneHero_Lock);
+    lockButton:SetChecked(true);
+    _G["lockButtonText"]:SetText("Lock RuneHero");
+
+
+
+
+
+
 	
 	-- Drop down menu to select runeblade graphic
 	local runebladeSelector = CreateFrame( "Frame", "runebladeSelector", rhOptions, "UIDropDownMenuTemplate");
@@ -118,7 +123,7 @@ end
 function RuneHero_Lock()
 	if (lockButton:GetChecked()) then
 	RuneButtonIndividual1C:SetMovable(false);
-	RuneButtonIndividual1C:RegisterForDrag(nil);
+	
 	RuneButtonIndividual1C:SetScript('OnDragStart', nil );
 	RuneFrameC:SetClampedToScreen(true);
 	DEFAULT_CHAT_FRAME:AddMessage(" RuneHero locked.");
