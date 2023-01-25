@@ -1,0 +1,297 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI-Wrath.xsd">
+  <Script file="RunePack.lua"/>
+
+  <Frame name="RuneButtonIndividualTemplateC" virtual="true" hidden="false">
+    <Size>
+      <AbsDimension x="18" y="18"/>
+    </Size>
+    <Frames>
+      <Frame name="$parentBorder">
+        <Size x="29" y="29"/>
+        <Anchors>
+          <Anchor point="CENTER">
+            <Offset x="0" y="0"/>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnLoad>
+            self:SetFrameLevel(self:GetFrameLevel()+1);
+          </OnLoad>
+        </Scripts>
+      </Frame>
+    </Frames>
+    <Layers>
+
+
+      <Layer level="ARTWORK">
+        <Texture name="$parentRune" file="Interface\CharacterFrame\DeathKnight-BloodRune">
+          <Size>
+            <AbsDimension x="25" y="25"/>
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+    </Layers>
+    <Scripts>
+      <OnLoad>
+        RuneButtonC_OnLoad(self);
+      </OnLoad>
+    </Scripts>
+  </Frame>
+
+  <Frame name="RuneFrameC" parent="UIParent" frameStrata="LOW" toplevel="true" movable="true" hidden="false">
+    <Size>
+      <AbsDimension x="56" y="110"/>
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER" relativeTo="UIParent" relativePoint="BOTTOMLEFT">
+        <Offset>
+          <AbsDimension x="500" y="300"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Scripts>
+      <OnLoad>
+        RuneFrameC_OnLoad(self);
+      </OnLoad>
+    </Scripts>
+  </Frame>
+
+  <Frame name="RuneFrameBack" parent="RuneFrameC" frameStrata="LOW" toplevel="true" movable="true" hidden="false">
+    <Size>
+      <AbsDimension x="55" y="112"/>
+    </Size>
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="3" y="-3"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Backdrop bgFile="Interface\AddOns\RunePack\textures\back.tga" tile="false">
+      <BackgroundInsets left="0" right="0" top="0" bottom="0"/>
+    </Backdrop>
+  </Frame>
+
+  <Button name="$parent_Drag" inherits="OptionsButtonTemplate" frameStrata="MEDIUM" hidden="true" parent="RuneFrameC" text="Drag">
+    <Size>
+      <AbsDimension x="48" y="20"/>
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER" relativeTo="RuneFrameC" relativePoint="TOP">
+        <Offset>
+          <AbsDimension x="-2" y="-36"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <OnLoad>
+      self:SetFrameLevel(self:GetFrameLevel()+1);
+    </OnLoad>
+  </Button>
+
+  <Frame name="RuneButtonIndividual1C" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="1" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="RuneButtonIndividual2C" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="2" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="RuneButtonIndividual3C" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="3" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="RuneButtonIndividual4C" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="4" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="RuneButtonIndividual5C" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="5" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="RuneButtonIndividual6d" inherits="RuneButtonIndividualTemplateC" parent="RuneFrameC" id="6" frameStrata="LOW">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="RuneFrameC" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+  </Frame>
+
+  <!--  START GUI CODE  -->
+
+  <Frame name="RunePackOptions">
+
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_Head" inherits="GameFontNormalLarge" text="RunePack">
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset>
+                <AbsDimension x="15" y="-15" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+
+    <Frames>
+      <CheckButton name="$parent_Locked" inherits="UICheckButtonTemplate" checked="true">
+        <Size>
+          <AbsDimension x="32" y="32"/>
+        </Size>
+
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent_Head">
+            <Offset>
+              <AbsDimension x="25" y="-40"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            RuneFrameC_Locked_OnClick(self);
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+
+      <CheckButton name="$parent_HideRp" inherits="UICheckButtonTemplate">
+        <Size>
+          <AbsDimension x="32" y="32"/>
+        </Size>
+
+        <Anchors>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parent_Locked">
+            <Offset>
+              <AbsDimension x="100" y="0"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            RuneFrameC_HideRp_OnClick(self);
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+
+      <Slider name="$parent_Scale" inherits="OptionsSliderTemplate" minValue="1" maxValue="20" defaultValue="5" orientation="HORIZONTAL">
+        <Size>
+          <AbsDimension x="200" y="16"/>
+        </Size>
+
+        <Anchors>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parent_Locked">
+            <Offset>
+              <AbsDimension x="0" y="-60"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnLoad>
+            getglobal(self:GetName().."High"):SetText("Big");
+            getglobal(self:GetName().."Low"):SetText("Small");
+            getglobal(self:GetName().."Text"):SetText("Scale");
+          </OnLoad>
+          <OnValueChanged>
+            RuneFrameC_Scale_OnValueChanged(self);
+          </OnValueChanged>
+        </Scripts>
+      </Slider>
+
+      <Slider name="$parent_Alpha" inherits="OptionsSliderTemplate" minValue="0" maxValue="100" defaultValue="100" orientation="HORIZONTAL">
+        <Size>
+          <AbsDimension x="200" y="16"/>
+        </Size>
+
+        <Anchors>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parent_Scale">
+            <Offset>
+              <AbsDimension x="0" y="-60"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnLoad>
+            getglobal(self:GetName().."High"):SetText("100%");
+            getglobal(self:GetName().."Low"):SetText("0%");
+            getglobal(self:GetName().."Text"):SetText("Background Opacity");
+          </OnLoad>
+          <OnValueChanged>
+            RuneFrameBack_Alpha_OnValueChanged(self);
+          </OnValueChanged>
+        </Scripts>
+      </Slider>
+
+      <Slider name="$parent_AlphaOoc" inherits="OptionsSliderTemplate" minValue="0" maxValue="100" defaultValue="100" orientation="HORIZONTAL">
+        <Size>
+          <AbsDimension x="200" y="16"/>
+        </Size>
+
+        <Anchors>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parent_Alpha">
+            <Offset>
+              <AbsDimension x="0" y="-60"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnLoad>
+            getglobal(self:GetName().."High"):SetText("100%");
+            getglobal(self:GetName().."Low"):SetText("0%");
+            getglobal(self:GetName().."Text"):SetText("Out of Combat Opacity");
+            RuneFrameC_AlphaOoc_value(self);
+          </OnLoad>
+          <OnValueChanged>
+            RuneFrameC_AlphaOoc_value(self);
+          </OnValueChanged>
+        </Scripts>
+      </Slider>
+
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        RunePackOptionsPanel_OnLoad(self);
+      </OnLoad>
+    </Scripts>
+  </Frame>
+</Ui>
