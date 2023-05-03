@@ -1,4 +1,4 @@
-## Interface:  100005
+## Interface:  100100
 ## Title: RuneHero
 ## Notes: The ultimate runic experience.
 ## Author: Lowbrow, Triadian, Xeelee
