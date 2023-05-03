@@ -1,4 +1,4 @@
-## Interface: 100005
+## Interface: 100100
 ## Title: RunePack
 ## Notes: Six pack shaped rune tracker heavily based on RuneHero.
 ## Author: Hrygar
