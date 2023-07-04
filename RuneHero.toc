@@ -4,7 +4,7 @@
 ## Author: Lowbrow, Triadian, Xeelee
 ## Maintainer: The Sickness
 ## SavedVariables: RuneHero_Saved
-## Version: 2.1.1
+## Version: 2.2.1
 
 RuneHero.xml
 RuneHero.lua
