@@ -1,10 +1,10 @@
-## Interface: 100105
+## Interface: 100107
 ## Title: RunePack
 ## Notes: Six pack shaped rune tracker heavily based on RuneHero.
 ## Author: Hrygar
 ## Maintainer: Sharpedge_Gaming
 ## SavedVariables: RunePack_Saved
-## Version: 2.1.1
+## Version: 2.2.2
 
 
 RunePack.lua
