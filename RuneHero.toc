@@ -1,10 +1,10 @@
-## Interface:  100107
+## Interface:  100200
 ## Title: RuneHero
 ## Notes: The ultimate runic experience.
 ## Author: Lowbrow, Triadian, Xeelee
 ## Maintainer: The Sickness
 ## SavedVariables: RuneHero_Saved
-## Version: 2.2.2
+## Version: 2.2.3
 
 RuneHero.xml
 RuneHero.lua
