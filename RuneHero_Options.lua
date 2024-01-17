@@ -21,12 +21,6 @@ function RH.RuneHero_LoadOptions (self)
     lockButton:SetScript("OnClick", RuneHero_Lock);
     lockButton:SetChecked(true);
     _G["lockButtonText"]:SetText("Lock RuneHero");
-
-
-
-
-
-
 	
 	-- Drop down menu to select runeblade graphic
 	local runebladeSelector = CreateFrame( "Frame", "runebladeSelector", rhOptions, "UIDropDownMenuTemplate");
@@ -83,8 +77,7 @@ function RH.RuneHero_LoadOptions (self)
 			UIDropDownMenu_AddButton(info, level);
 		end
 	end
-	
-	
+		
 	-- Sliding bar for runeblade size
 	local sizeSlider = CreateFrame( "Slider", "sizeSlider", rhOptions, "OptionsSliderTemplate");
 	-- Edit box underneath the size slider
@@ -99,20 +92,24 @@ function RH.RuneHero_LoadOptions (self)
 	sizeSlider:SetMinMaxValues(1,10);
 	sizeSlider:SetValueStep( 1 );
 	sizeSlider:SetObeyStepOnDrag( true );
-	sizeSlider:SetValue( RuneHero_Saved.scale * 7 );
+	sizeSlider:SetValue( RuneHero_Saved.scale * 4 );
 	editbox:SetSize(50,30)
     editbox:ClearAllPoints()
     editbox:SetPoint("CENTER", sizeSlider, "CENTER", 0, -20)
-    editbox:SetText( tostring(RuneHero_Saved.scale * 7) )
+    editbox:SetText( tostring(RuneHero_Saved.scale * 4) )
     editbox:SetAutoFocus(false)
 	sizeSlider:SetScript("OnValueChanged", function(self, value)
 		RuneHero_Resize(value);
 		editbox:SetText(value);
-	end);	
+	end);
+
+    -- Set the default value to 5
+    sizeSlider:SetValue(5);
+	
 	editbox:SetScript("OnEnterPressed", function(self)
       local val = self:GetText()
       if tonumber(val) then
-		if tonumber(val) >= 1 then if tonumber(val) <= 10 then
+		if tonumber(val) >= 1 then if tonumber(val) <= 5 then
 			self:GetParent():SetValue(val) end
 		end
       end
@@ -170,6 +167,6 @@ function RuneHero_Resize(scaleParam)
 			RuneHero_Saved.scale = scaleParam;
 			RuneHero_ButtonScale(scaleParam);
 		else
-			DEFAULT_CHAT_FRAME:AddMessage(" RuneHero: Size must be between 1-10 (Default: 7).");
+			DEFAULT_CHAT_FRAME:AddMessage(" RuneHero: Size must be between 1-10 (Default: 4).");
 		end
 end
